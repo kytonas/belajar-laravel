@@ -74,3 +74,10 @@ Route::get('spekbadan/{nama}/{beratbadan}/{tinggibadan}', function ($a, $bb, $tb
         . "Nlai BMI : $bmi<br>"
         . "Keterangan : $ket";
 });
+
+
+// Route optional parameter (ditandai dengan tanda tanya)
+Route::get('/user/{nama?}', function($nama = "Waltuh") {
+    echo '<h2>Route Optional Parameter</h2><hr>';
+    return "Nama Pengguna : $nama";
+});
