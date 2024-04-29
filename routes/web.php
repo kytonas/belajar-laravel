@@ -80,4 +80,4 @@ Route::get('spekbadan/{nama}/{beratbadan}/{tinggibadan}', function ($a, $bb, $tb
 Route::get('/user/{nama?}', function($nama = "Waltuh") {
     echo '<h2>Route Optional Parameter</h2><hr>';
     return "Nama Pengguna : $nama";
-});
+}); 
