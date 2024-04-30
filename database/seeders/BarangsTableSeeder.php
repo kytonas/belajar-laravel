@@ -16,13 +16,12 @@ class BarangsTableSeeder extends Seeder
      */
     public function run()
     {
-        $barangs = [
-            ['nama' => 'Acer Aspire 3', 'jumlah' => 25],
-            ['nama' => 'Asus Zenbook Duo', 'jumlah' => 30],
-            ['nama' => 'Axioo Pongo', 'jumlah' => 35]
+         $barangs = [
+            ['nama_barang' => 'Acer Aspire 3', 'jumlah' => 25],
+            ['nama_barang' => 'Asus Zenbook Duo', 'jumlah' => 30],
+            ['nama_barang' => 'Axioo Pongo', 'jumlah' => 35]
     ];
         // masukkan data ke database
         DB::table('barangs')->insert($barangs);
-
     }
 }

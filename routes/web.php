@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\Siswa;
 use App\Models\Barang;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -95,3 +98,26 @@ Route::get('/barang', function () {
     return $value;
 
 });
+
+Route::get('/siswa', function () {
+    $siswa = Siswa::all();
+
+    // $siswa = new Siswa;
+    // $siswa ->nama = 'Mohammad Bisma Fazarahim';
+    // $siswa ->jenis_kelamin = 'Mohammad Bisma Fazarahim';
+    // $siswa->alamat = 'inhoftank';
+    // $siswa->agama = 'Islam';
+    // $siswa->telepon = '08183718291';
+    // $siswa->email = 'bisma@gmail.com';
+    // $siswa -> save();
+
+    return view('tampil_siswa', compact('siswa'));
+});
+
+Route::get('/barang', function () {
+    $barang = Barang::all();
+
+    return view('tampil_barang', compact('barang'));
+});
+
+
