@@ -16,7 +16,7 @@
             <th>Nama_produk</th>
             <th>Jumlah</th>
             <th>tanggal_produksi</th>
-            <th>Nama_merek</th>
+            <th>Nama_merek</th> 
             <th>id_merek</th>
         </tr>
         @php $no = 1; @endphp

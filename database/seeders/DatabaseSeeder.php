@@ -19,7 +19,11 @@ class DatabaseSeeder extends Seeder
         // $this->call(BarangsTableSeeder::class);
         // $this->call(PostsTableSeeder::class);
         // $this->call(MereksTableSeeder::class);
-          $this->call(ProduksTableSeeder::class);
+        //   $this->call(ProduksTableSeeder::class);
+      // $this->call(PenggunasTableSeeder::class);
+      // $this->call(PembelisTableSeeder::class);
+      // $this->call(BaranggsTableSeeder::class);
+      // $this->call(TransaksisTableSeeder::class);
 
 
 

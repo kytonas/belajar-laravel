@@ -8,6 +8,10 @@ use App\Models\Pengguna;
 use App\Models\Telepon;
 use App\Models\Merek;
 use App\Models\Produk;
+use App\Models\Pembeli;
+use App\Models\Barangg;
+use App\Models\Transaksi;
+
 
 
 
@@ -149,4 +153,23 @@ Route::get('/produk', function () {
 
     return view('tampil_produk', compact('produk'));
 });
+
+Route::get('/pembeli', function () {
+    $pembeli = Pembeli::all();
+
+    return view('tampil_pembeli', compact('pembeli'));
+});
+
+Route::get('/barang2', function () {
+    $barangg = Barangg::all();
+
+    return view('tampil_barangg', compact('barangg'));
+});
+
+Route::get('/transaksi', function () {
+    $transaksi = Transaksi::all();
+
+    return view('tampil_transaksi', compact('transaksi'));
+});
+
 

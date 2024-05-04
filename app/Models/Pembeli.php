@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Merek extends Model
+class Pembeli extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id','nama_merek'];
+    protected $fillable = ['id','nama_pembeli','jenis_kelamin'];
     public $timestamp = true;
 
-    public function produk() 
+    public function transaksi() 
     {
-        return $this->hasMany(Produk::class);
+        return $this->hasMany(Transaksi::class);
     }
 }
-  

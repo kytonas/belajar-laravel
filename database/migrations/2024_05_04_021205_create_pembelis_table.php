@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('telepons', function (Blueprint $table) {
-            $table->id(); 
-            $table->string('nomor_telepon');
-            $table->unsignedBigInteger('pengguna_id');
+        Schema::create('pembelis', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_pembeli');
+            $table->string('jenis_kelamin');
             $table->timestamps();
-
-            $table->foreign('pengguna_id')->references('id')->on('penggunas')->onDelete('cascade');
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      *
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('telepons');
+        Schema::dropIfExists('pembelis');
     }
 };

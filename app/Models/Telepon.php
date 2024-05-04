@@ -16,3 +16,4 @@ class Telepon extends Model
         return $this->BelongsTo(Pengguna::class, 'pengguna_id');
     }
 }
+ 
