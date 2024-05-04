@@ -14,7 +14,9 @@
             <th>No</th>
             <th>ID</th>
             <th>Nama_barang</th>
+            <th>Harga_barang</th>
             <th>Nama_pembeli</th>
+            <th>Jenis_kelamin</th>
             <th>Jumlah</th>
             <th>Tanggal</th>
         </tr>
@@ -24,7 +26,9 @@
             <td>{{ $no++ }}</td>
             <td>{{ $data -> id }}</td>
             <td>{{ $data -> barangg -> nama_barang}}</td>
+            <td>{{ $data -> barangg -> harga}}</td>
             <td>{{ $data -> pembeli -> nama_pembeli}}</td>
+            <td>{{ $data -> pembeli -> jenis_kelamin}}</td>
             <td>{{ $data -> jumlah }}</td>
             <td>{{ $data -> tanggal }}</td>
         @endforeach
