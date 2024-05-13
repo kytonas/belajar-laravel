@@ -172,4 +172,14 @@ Route::get('/transaksi', function () {
     return view('tampil_transaksi', compact('transaksi'));
 });
 
+Route::get('/template', function () {
+    $post = POST::all();
 
+    return view('template', compact('post'));
+});
+
+Route::get('/daftarproduk', function () {
+    $produk = Produk::all();
+
+    return view('template2', compact('produk'));
+});
