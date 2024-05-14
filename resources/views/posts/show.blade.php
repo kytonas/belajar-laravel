@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Detail Artikel</title>
 </head>
 
 <body>
@@ -23,24 +23,22 @@
         <div class="container">
             {{-- ROW 1 --}}
             <div class="row mt-5 justify-content-center">
-                <h2>List Artikel</h2>
+                <h2>Detail Artikel</h2>
             </div>
             {{-- /ROW 1 --}}
             {{-- ROW 2 --}}
             <div class="row mt-5">
-                @foreach ($post as $data)
                     <div class="col-4">
                         <div class="card" style="width: 18rem;">
                             <img src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXABuN9dMGF4tl3U0%25z8rMH1spbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmWBisGK7Zlp0KtYYF%25mVSW8uAVbsqYSIZ5yPewSQLCvNzxLE%25GXoq1S9yr6FObMFswRAyYib32yl3URN%25GcCW1TG87hXuci60yM"
                                 class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $data->title }}</h5>
-                                <p class="card-text">{{ $data->content }}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">{{ $post -> title }}</h5>
+                                <p class="card-text">{{ $post -> content }}</p>
+                                <a href="/posts" class="btn btn-primary">Kembali</a>
                             </div>
                         </div>
                     </div>
-                @endforeach
                 {{-- /ROW 2 --}}
             </div>
         </div>

@@ -11,7 +11,9 @@ use App\Models\Produk;
 use App\Models\Pembeli;
 use App\Models\Barangg;
 use App\Models\Transaksi;
-
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\MerekController;
 
 
 
@@ -172,14 +174,19 @@ Route::get('/transaksi', function () {
     return view('tampil_transaksi', compact('transaksi'));
 });
 
-Route::get('/template', function () {
-    $post = POST::all();
+// Controller Post
+Route::get('/posts', [PostController::class, 'menampilkan']);
+Route::get('/posts/{id}', [PostController::class, 'show']);
 
-    return view('template', compact('post'));
-});
 
-Route::get('/daftarproduk', function () {
-    $produk = Produk::all();
 
-    return view('template2', compact('produk'));
-});
+// controller produk
+Route::get('/daftarproduk', [ProdukController::class, 'show']);
+Route::get('/daftarproduk/{id}', [ProdukController::class, 'showById']) -> name('produks.show2');
+
+// controller merek
+Route::get('/daftarmerek', [MerekController::class, 'getMerek']);
+Route::get('/daftarmerek/{id}', [MerekController::class, 'getMerekById']) -> name('mereks.show3');
+
+
+

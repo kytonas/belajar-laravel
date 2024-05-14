@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <title>Daftar Produk</title>
+    <title>Daftar Merek</title>
 </head>
 
 <body>
@@ -23,22 +23,20 @@
         <div class="container">
             {{-- ROW 1 --}}
             <div class="row mt-5 justify-content-center">
-                <h2>List Produk</h2>
+                <h2>Daftar Merek</h2>
             </div>
             {{-- /ROW 1 --}}
             {{-- ROW 2 --}}
             <div class="row">
-                @foreach ($produk as $data)
+                @foreach ($merek as $data)
                     <div class="col-4 mt-5">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card bg-secondary text-light" style="width: 18rem;">
                             <img src="https://c1.klipartz.com/pngpicture/662/261/sticker-png-hyundai-logo-car-hyundai-tiburon-silhouette-vehicle-drawing-vehicle-door-bumper.png"
                                 class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Nama Produk : {{ $data->nama_produk }}</h5>
-                                <p class="card-text">Jumlah : {{ $data->jumlah }}</p>
-                                <p class="card-text">Tanggal Produk : {{ $data->tanggal_produksi }}</p>
-                                <p class="card-text">Merek : {{ $data -> merek -> nama_merek }}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">{{ $data->nama_merek }}</h5>
+                                <a href="{{ route('mereks.show3', $data->id) }}" class="btn btn-primary">Lihat
+                                    Selengkapnya</a>
                             </div>
                         </div>
                     </div>
