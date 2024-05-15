@@ -7,6 +7,10 @@ use App\Models\Merek;
 
 class MerekController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function getMerek()
     {
         $merek = Merek::all();

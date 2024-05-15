@@ -18,7 +18,7 @@
             <th>tanggal_produksi</th>
             <th>Nama_merek</th> 
             <th>id_merek</th>
-        </tr>
+        </tr> 
         @php $no = 1; @endphp
         @foreach($produk as $data)
         <tr>

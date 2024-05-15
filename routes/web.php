@@ -178,8 +178,6 @@ Route::get('/transaksi', function () {
 Route::get('/posts', [PostController::class, 'menampilkan']);
 Route::get('/posts/{id}', [PostController::class, 'show']);
 
-
-
 // controller produk
 Route::get('/daftarproduk', [ProdukController::class, 'show']);
 Route::get('/daftarproduk/{id}', [ProdukController::class, 'showById']) -> name('produks.show2');
@@ -189,4 +187,10 @@ Route::get('/daftarmerek', [MerekController::class, 'getMerek']);
 Route::get('/daftarmerek/{id}', [MerekController::class, 'getMerekById']) -> name('mereks.show3');
 
 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// CRUD Brand
+use App\Http\Controllers\BrandController;
+Route::resource('brand', BrandController::class);
