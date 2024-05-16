@@ -5,12 +5,17 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Brand data</div>
+                    @if(session('success'))
+                    <div class="alert alert-success fade show" role="alert">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+                    <div class="card-header">Brand data's</div>
 
                     <div class="card-body">
                         <a href="{{ route('brand.create') }}" class="btn btn-primary">Add data</a>
                         <table class="table">
-                            <thead>
+                            <thead> 
                                 <tr>
                                     <th scope="col">No.</th>
                                     <th scope="col">Brand Name</th>
@@ -25,11 +30,15 @@
                                 <tr>
                                     <th scope="row">{{ $no++ }}</th>
                                     <td>{{ $data -> name_brand }}</td>
+                                    <form action="{{ route('brand.destroy', $data -> id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
                                     <td>
-                                        <a href="" class="btn btn-success">Edit</a>
+                                        <a href="{{ route('brand.edit', $data -> id )}}" class="btn btn-success">Edit</a>
                                         <a href="{{ route('brand.show', $data -> id )}}" class="btn btn-warning">Show</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <button type="submit" class="btn btn-danger">Delete</button>
                                     </td>
+                                    </form>
                                 </tr>
                                 @endforeach                               
                             </tbody>

@@ -17,3 +17,4 @@ class Barangg extends Model
         return $this->hasMany(Transaksi::class);
     }
 }
+ 

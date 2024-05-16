@@ -65,7 +65,7 @@ Route::get('vegetables', function () {
 });
 
 // route parameter: parameter ditandai dengan {}
-Route::get('product/{name}', function ($name) {
+Route::get('products/{name}', function ($name) {
     return "produk: $name";
 });
 
@@ -194,3 +194,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // CRUD Brand
 use App\Http\Controllers\BrandController;
 Route::resource('brand', BrandController::class);
+
+// CRUD Product
+use App\Http\Controllers\ProductController;
+Route::resource('product', ProductController::class);

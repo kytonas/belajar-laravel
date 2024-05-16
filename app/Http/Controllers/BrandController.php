@@ -12,6 +12,11 @@ class BrandController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this -> middleware('auth');
+    }
+
     public function index()
     {
         $brand = Brand::all();
@@ -39,7 +44,7 @@ class BrandController extends Controller
         $brand = new Brand;
         $brand -> name_brand = $request -> name_brand;
         $brand -> save();
-        return redirect()->route('brand.index');
+        return redirect()->route('brand.index')->with('success', 'Data berhasil ditambah');
     }
 
     /**
@@ -62,22 +67,26 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        return view('brands.edit', compact('brand'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  $request 
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        $brand -> name_brand = $request -> name_brand;
+        $brand -> save();
+        return redirect() -> route('brand.index')->with('success', 'Data berhasil diubah');
     }
 
-    /**
+    /** 
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -85,6 +94,9 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        $brand -> delete();
+        return redirect()->route('brand.index');
+
     }
 }

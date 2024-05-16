@@ -20,4 +20,4 @@ class Transaksi extends Model
         return $this->BelongsTo(Pembeli::class, 'id_pembeli');
     }
 }
- 
+  

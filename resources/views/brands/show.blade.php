@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                  <div class="card-header">Add Data Brand</div>
+                  <div class="card-header">Detail Brand Name</div>
                     <div class="card-body">
                         <form action="" method="POST">
                             <div class="mb-3">
